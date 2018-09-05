@@ -43,7 +43,7 @@ instance Inject a => ToContent (DhallResponse a) where
   toContent (DhallResponse a) =
       toContent
     $ renderStrict
-    $ layoutCompact
+    $ layoutPretty defaultLayoutOptions
     $ prettyExpr
     $ embed inject a
 
